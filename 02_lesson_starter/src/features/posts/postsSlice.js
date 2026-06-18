@@ -7,6 +7,7 @@ const initialState = [
     title: 'Learning Redux Toolkit',
     content: "I've heard good things.",
     date: sub(new Date(), { minutes: 10 }).toISOString(),
+    userId: '1',
     reactions: {
       thumbsUp: 0,
       wow: 0,
@@ -19,6 +20,7 @@ const initialState = [
     id: '2',
     title: 'Slices...',
     content: 'The more I say slice, the more I want pizza.',
+    userId: '2',
     date: sub(new Date(), { minutes: 5 }).toISOString(),
     reactions: {
       thumbsUp: 0,

@@ -6,37 +6,20 @@ const POSTS_URL = 'https://jsonplaceholder.typicode.com/posts';
 
 const initialState = {
   posts: [],
-  status: 'idle', // 'idle' | 'loading' | 'succeeded' | 'failed'
+  status: 'idle', //'idle' | 'loading' | 'succeeded' | 'failed'
   error: null,
 };
 
-// export const fetchPosts = createAsyncThunk('posts/fetchPosts', async () => {
-//   try {
-//     const response = await axios.get(POSTS_URL);
-//     return [...response.data];
-//   } catch (err) {
-//     return err.message;
-//   }
-// });
-
 export const fetchPosts = createAsyncThunk('posts/fetchPosts', async () => {
-  try {
-    const response = await axios.get(POSTS_URL);
-    return response.data;
-  } catch (err) {
-    return err.message;
-  }
+  const response = await axios.get(POSTS_URL);
+  return response.data;
 });
 
 export const addNewPost = createAsyncThunk(
   'posts/addNewPost',
   async (initialPost) => {
-    try {
-      const response = await axios.post(POSTS_URL, initialPost);
-      return response.data;
-    } catch (err) {
-      return err.message;
-    }
+    const response = await axios.post(POSTS_URL, initialPost);
+    return response.data;
   },
 );
 

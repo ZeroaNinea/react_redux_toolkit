@@ -5,8 +5,10 @@ import PostAuthor from './PostAuthor';
 import TimeAgo from './TimeAgo';
 import ReactionButtons from './ReactionButtons';
 
+import { useParams } from 'react-router-dom';
+
 const SinglePostPage = () => {
-  // retrieve postId
+  const { postId } = useParams();
 
   const post = useSelector((state) => selectPostById(state, postId));
 

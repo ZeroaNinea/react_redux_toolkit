@@ -6,9 +6,14 @@ import { Routes, Route } from 'react-router-dom';
 
 function App() {
   return (
+    // <main className="App">
+    //   <AddPostForm />
+    //   <PostsList />
+    // </main>
     <Routes>
       <Route path="/" element={<Layout />}>
-        <Route idnex element={<PostsList />} />
+        <Route index element={<PostsList />} />
+
         <Route path="post">
           <Route index element={<AddPostForm />} />
           <Route path=":postId" element={<SinglePostPage />} />
